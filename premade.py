@@ -3,10 +3,10 @@ from pydub import AudioSegment
 from pydub.playback import play
 
 
-dot_sound = AudioSegment.from_file("short.mp3", format="mp3")  # Short sound for dot
-dash_sound = AudioSegment.from_file("long.mp3", format="mp3")  # Long sound for dash
+dot_sound = AudioSegment.from_file("short.mp3", format="mp3")  # sot
+dash_sound = AudioSegment.from_file("long.mp3", format="mp3")  # dash
 
-# Morse code mapping (letters and numbers to dot/dash sequences)
+# dict for all important morse char
 morse_dict = {
     "A": (dot_sound, dash_sound),         # .- (dot-dash)
     "B": (dash_sound, dot_sound, dot_sound, dot_sound),   # -... (dash-dot-dot-dot)
@@ -51,7 +51,7 @@ morse_dict = {
 user = input("what? ")
 user = user.replace(" ", "")
 user = user.upper()
-for char in user:
-	if char in morse_dict:
-		for sound in morse_dict[char]:
-			play(sound)
+for char in user: #for every char in user
+	if char in morse_dict: #if char is in the dict
+		for sound in morse_dict[char]: #make sound if in dict
+			play(sound)  #play the sound
