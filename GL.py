@@ -4,7 +4,7 @@ from pydub.playback import play
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-button = GPIO.setup(25,GPIO.IN) #green
+button = GPIO.setup(25,GPIO.IN) #button
 
 x = 0
 while x == 0:
